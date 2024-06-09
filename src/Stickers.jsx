@@ -27,26 +27,29 @@ const Stickers = () => {
   }, [stickers, initialMousePosition, textures])
 
   return (
-    <mesh castShadow receiveShadow onPointerDown={handleOnMouseDown} onPointerUp={handleOnMouseUp}>
-      <sphereGeometry args={[1, 64, 64]} />
-      {stickers.map((sticker, i) => (
-        <Decal key={i} {...sticker} >
-          <meshPhysicalMaterial
-            map={sticker.texture}
-            roughness={0.6}
-            clearcoat={0.5}
-            metalness={0.8}
-            polygonOffsetFactor={-10}
-            transparent={true}
-            polygonOffset={true}
-            map-flipY={false}
-            depthWrite={false}
-            toneMapped={false}
-          />
-        </Decal>
-      ))}
-      <meshPhysicalMaterial clearcoat={1} roughness={0} metalness={0.5} clearcoatRoughness={0} color="black" />
-    </mesh>
+    <>
+    <color attach="background" args={['#cc0b09']} />
+      <mesh castShadow receiveShadow onPointerDown={handleOnMouseDown} onPointerUp={handleOnMouseUp}>
+        <sphereGeometry args={[1, 64, 64]} />
+        {stickers.map((sticker, i) => (
+          <Decal key={i} {...sticker} >
+            <meshPhysicalMaterial
+              map={sticker.texture}
+              roughness={0.6}
+              clearcoat={0.5}
+              metalness={0.8}
+              polygonOffsetFactor={-10}
+              transparent={true}
+              polygonOffset={true}
+              map-flipY={false}
+              depthWrite={false}
+              toneMapped={false}
+              />
+          </Decal>
+        ))}
+        <meshPhysicalMaterial clearcoat={1} roughness={0} metalness={0.5} clearcoatRoughness={0} color="black" />
+      </mesh>
+    </>
   )
 }
 
