@@ -1,14 +1,17 @@
-import { OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React from "react"
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+import { useThree } from '@react-three/fiber'
+//TEST
+import { Bvh } from '@react-three/drei'
+
+const CAMERA_POSITIONS = [0, 0, 9]
 
 const BasicParticles = () => {
-  // This reference gives us direct access to our points
-
-
-  // You can see that, like our mesh, points also takes a geometry and a material,
-  // but a specific material => pointsMaterial
+  useThree(({ camera }) => {
+    camera.position.set(...CAMERA_POSITIONS)
+  })
+  
   return (
     <>
       <color attach="background" args={['#111317']} />
@@ -22,20 +25,15 @@ const CustomGeometryParticles = ({count, shape}) => {
   const distance = 1
 
   const particlesPosition = useMemo(() => {
-    // Create a Float32Array of count*3 length
-    // -> we are going to generate the x, y, and z values for 2000 particles
-    // -> thus we need 6000 items in this array
     const positions = new Float32Array(count * 3)
     for (let i = 0; i < count; i++) {
       const theta = THREE.MathUtils.randFloatSpread(360)
       const phi = THREE.MathUtils.randFloatSpread(360)
 
-      // Generate random values for x, y, and z on every loop
       let x = distance * Math.sin(theta) * Math.cos(phi)
       let y = distance * Math.sin(theta) * Math.sin(phi)
       let z = 0
   
-      // We add the 3 values to the attribute array for every loop
       positions.set([x, y, z], i * 3)
     }
   
@@ -84,4 +82,4 @@ const CustomGeometryParticles = ({count, shape}) => {
   )
 }
 
-export default BasicParticles;
+export default React.memo(BasicParticles);

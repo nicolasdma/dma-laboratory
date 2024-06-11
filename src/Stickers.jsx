@@ -1,5 +1,6 @@
 import React from "react"
 import {useTexture, Decal} from '@react-three/drei'
+import { Environment } from '@react-three/drei'
 
 const PRICE_TAG_IMAGES = ["./price-tag-1.png", "./sticker-2.webp"]
 const DEFAULT_SCALE = [0.5, 0.25, 0.25]
@@ -28,6 +29,7 @@ const Stickers = () => {
 
   return (
     <>
+    <Environment preset="city" />
     <color attach="background" args={['#cc0b09']} />
       <mesh castShadow receiveShadow onPointerDown={handleOnMouseDown} onPointerUp={handleOnMouseUp}>
         <sphereGeometry args={[1, 64, 64]} />
