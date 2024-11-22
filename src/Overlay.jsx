@@ -17,18 +17,16 @@ const Overlay = () => {
         </p>
       </div>
       <div style={{ pointerEvents: 'none', position: 'absolute', bottom: 0, left: 0, right: 0, display: 'flex', gap: 20, alignItems: 'center', padding: 40 }}>
-        <a target="_blank" href="https://x.com/dullcrato" rel="noopener">
+        {/* <a target="_blank" href="https://x.com/dma" rel="noopener">
           <img src="./face.png" style={{ width: 80, borderRadius: 15 }} />
-        </a>
+        </a> */}
         <div style={{ position: 'relative', flex: 1, marginLeft: 0, display: 'flex', alignItems: 'flex-end', gap: 10, justifyContent: 'space-between' }}>
           <div>
-            Lab
-            <br />
-            dullcrato
+          dma lab
           </div>
           <a
             target="_blank"
-            href="https://github.com/dullcrato/dullcrato-laboratory/blob/master/src/Sphere.jsx"
+            href="https://github.com/nicolasdma/dma-laboratory/blob/master/src/Stickers.jsx"
             rel="noopener"
           >
             &lt;&gt;
