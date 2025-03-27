@@ -7,9 +7,13 @@ import Particles from './Particles'
 
 const buttonContainerStyle = {
   position: 'absolute',
-  top: 0,
-  left: 0,
-  zIndex: 100,
+  bottom: '0px',
+  zIndex: '100',
+  width: '100vw',
+  display: 'flex',
+  justifyContent: 'center',
+  margin: '10px 0',
+  gap: '5px'
 }
 
 const App = () => {

@@ -22,7 +22,9 @@ const Overlay = () => {
         </a> */}
         <div style={{ position: 'relative', flex: 1, marginLeft: 0, display: 'flex', alignItems: 'flex-end', gap: 10, justifyContent: 'space-between' }}>
           <div>
-          dma lab
+            <div>
+              Lab
+            </div>
           </div>
           <a
             target="_blank"
